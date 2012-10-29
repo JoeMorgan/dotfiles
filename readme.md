@@ -1,8 +1,12 @@
-# Paul's dotfiles.
+# Joe's dotfiles.
 
-[mathias's readme](https://github.com/mathiasbynens/dotfiles/) is awesome. go read it.
+Like @paul_irish says, [mathias's readme](https://github.com/mathiasbynens/dotfiles/) is where to start. I'm like four places removed and I'm sure some unwise decisions have been made along the way. The biggest changes I've made have been to get rid of Vim related stuff (blech) and use zsh instead of bash.
 
-This repo is mostly for me but you're welcome to make suggestions. Mathias's is the project to fork.  I'm mostly catching up to him, @cowboy, and @gf3.
+I also customize my prompt in a way that's based heavily on [this Nettuts+ article](http://net.tutsplus.com/tutorials/tools-and-tips/how-to-customize-your-command-prompt/)
+
+The rest of this I'm shamelessly copying from Paul's readme. Why, you say? The doctor says I'm lazy.
+
+
 
 ## install the neccessary apps
 
@@ -53,7 +57,6 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 
 ####  Automatic config
 * `.ackrc` - for ack (better than grep)
-* `.vimrc`, `.vim` - vim config, obv.
 
 #### shell environement
 * `.aliases`
