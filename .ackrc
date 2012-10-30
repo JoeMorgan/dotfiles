@@ -1,6 +1,8 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=vendor
+--ignore-dir=.git
+--ignore-dir=.svn
 --ignore-dir=public/generated
 --sort-files
 -a
