@@ -4,7 +4,7 @@ Like @paul_irish says, [mathias's readme](https://github.com/mathiasbynens/dotfi
 
 I also customize my prompt in a way that's based heavily on [this Nettuts+ article](http://net.tutsplus.com/tutorials/tools-and-tips/how-to-customize-your-command-prompt/)
 
-The rest of this I'm shamelessly copying from Paul's readme. Why, you say? The doctor says I'm lazy.
+The rest of this I'm shamelessly copying from Paul's readme. Why? The doctor says I'm lazy.
 
 
 
@@ -84,7 +84,7 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 ## Installation
 
 ```bash
-git clone https://github.com/paulirish/dotfiles.git && cd dotfiles && ./sync.sh
+git clone https://github.com/JoeMorgan/dotfiles.git && cd dotfiles && ./sync.sh
 ```
 
 To update later on, just run the sync again.
