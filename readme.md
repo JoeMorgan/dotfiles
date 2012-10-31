@@ -7,11 +7,6 @@ I also customize my prompt in a way that's based heavily on [this Nettuts+ artic
 The rest of this I'm shamelessly copying from Paul's readme. Why? The doctor says I'm lazy.
 
 
-
-## install the neccessary apps
-
-My basic setup is captured in `install-deps.sh` which adds homebrew, z, nave, etc.
-
 ## private config
 
 Toss it into a file called `.extra` which you do not commit to this repo and just keep in your `~/`
@@ -20,11 +15,13 @@ I do something nice with my `PATH` there:
 
 ```shell
 # PATH like a bawss
-      PATH=/opt/local/bin
-PATH=$PATH:/opt/local/sbin
+PATH=/opt/local/bin
 PATH=$PATH:/bin
-PATH=$PATH:~/.rvm/bin
-PATH=$PATH:~/code/git-friendly
+PATH=$PATH:/sbin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/sbin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/opt/local/sbin
 # ...
 
 export PATH
@@ -45,13 +42,6 @@ When setting up a new Mac, you may want to set some sensible OS X defaults:
 ./.osx
 ```
 
-## Similar projects
-
-I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/master/.jshintrc) and [`.editorconfig`](http://editorconfig.org/) defined for all your projects.
-
-
-
-
 
 ## overview of files
 
@@ -60,17 +50,15 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 
 #### shell environement
 * `.aliases`
-* `.bash_profile`
-* `.bash_prompt`
-* `.bashrc`
+* `.zsh_profile`
+* `.zsh_prompt`
+* `.zshrc`
 * `.exports`
 * `.functions`
 * `.extra` - not included, explained above
 
 #### manual run
-* `install-deps.sh` - random apps i need installed
 * `.osx` - run on a fresh osx machine
-* `.brew` - homebrew intialization
 
 #### git, brah
 * `.git`
