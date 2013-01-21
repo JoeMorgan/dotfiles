@@ -12,6 +12,11 @@ alias ls='ls -a -F'
 
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
+alias processes="ps -ef"
+
+alias rmsvn="find ./ -name \".svn\" | xargs rm -Rf"
+
+alias apache="sudo apachectl -k restart"
 
 # programs
 alias slt='open -a "Sublime Text 2"'
