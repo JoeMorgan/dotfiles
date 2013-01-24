@@ -42,10 +42,10 @@ unsetopt correct_all
 . /Tools/nvm/nvm.sh
 
 
-
 # Load ~/.extra, ~/.zsh_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,zsh_prompt,exports,aliases,functions}; do
+# Took out zsh_prompt since that functionality exists within the theme file
+for file in ~/.{extra,exports,aliases,functions}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file

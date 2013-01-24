@@ -1,55 +1,56 @@
-function get_pwd() {
-   echo "${PWD/$HOME/~}"
-}
-function put_spacing() {
-	local git=$(git_prompt_info)
-	local svn=$(my_svn_prompt_info)
-	local count=0
+# This functionality exists within my zsh-theme
+# function get_pwd() {
+#    echo "${PWD/$HOME/~}"
+# }
+# function put_spacing() {
+# 	local git=$(git_prompt_info)
+# 	local svn=$(my_svn_prompt_info)
+# 	local count=0
 
-	if [ ${#git} != 0 ]; then
-    	((count=${#git} - 10))
-	elif [ ${#svn} != 0 ]; then
-		((count=${#svn} - 24))
-	else 
-	    count=0
-	fi
+# 	if [ ${#git} != 0 ]; then
+#     	((count=${#git} - 10))
+# 	elif [ ${#svn} != 0 ]; then
+# 		((count=${#svn} - 24))
+# 	else 
+# 	    count=0
+# 	fi
 	
-	local termwidth
-	(( termwidth = ${COLUMNS} + 5 - ${#HOST} - ${#$(get_pwd)} - ${count} ))	
+# 	local termwidth
+# 	(( termwidth = ${COLUMNS} + 5 - ${#HOST} - ${#$(get_pwd)} - ${count} ))	
 	
-	local spacing=""
-	for i in {1..$termwidth}; do
-	    spacing="${spacing} "
-	done
-	echo $spacing	
-}
+# 	local spacing=""
+# 	for i in {1..$termwidth}; do
+# 	    spacing="${spacing} "
+# 	done
+# 	echo $spacing	
+# }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
-ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
-ZSH_THEME_SVN_PROMPT_PREFIX="[svn:"
-ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+"
-ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
+# ZSH_THEME_GIT_PROMPT_PREFIX="[git:"
+# ZSH_THEME_GIT_PROMPT_SUFFIX="]$reset_color"
+# ZSH_THEME_SVN_PROMPT_PREFIX="[svn:"
+# ZSH_THEME_GIT_PROMPT_DIRTY="$fg[red]+"
+# ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
 
-function git_prompt_info() {
-   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-   echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
-}
+# function git_prompt_info() {
+#    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+#    echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+# }
 
-function my_svn_prompt_info(){
-	if [ $(in_svn) ]; then
-echo "$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_SVN_PROMPT_PREFIX\
-$ZSH_THEME_GIT_PROMPT_CLEAN$(svn_get_repo_name)$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_GIT_PROMPT_SUFFIX$ZSH_PROMPT_BASE_COLOR$(svn_dirty)$ZSH_THEME_GIT_PROMPT_CLEAN"
-    fi
-}
+# function my_svn_prompt_info(){
+# 	if [ $(in_svn) ]; then
+# echo "$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_SVN_PROMPT_PREFIX\
+# $ZSH_THEME_GIT_PROMPT_CLEAN$(svn_get_repo_name)$ZSH_THEME_GIT_PROMPT_CLEAN$ZSH_THEME_GIT_PROMPT_SUFFIX$ZSH_PROMPT_BASE_COLOR$(svn_dirty)$ZSH_THEME_GIT_PROMPT_CLEAN"
+#     fi
+# }
 
-function choose_prompt_info(){
-	if [ $(in_svn) ]; then
-		echo $(my_svn_prompt_info)
-	else
-		echo $(git_prompt_info)
-	fi
-}
+# function choose_prompt_info(){
+# 	if [ $(in_svn) ]; then
+# 		echo $(my_svn_prompt_info)
+# 	else
+# 		echo $(git_prompt_info)
+# 	fi
+# }
 
-PROMPT='
-$fg[cyan]Spread it on: $fg[yellow]$(get_pwd)$(put_spacing)$(choose_prompt_info)
-$reset_color→ '
+# PROMPT='
+# $fg[cyan]Spread it on: $fg[yellow]$(get_pwd)$(put_spacing)$(choose_prompt_info)
+# $reset_color→ '
