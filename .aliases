@@ -14,14 +14,15 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 alias processes="ps -ef"
 
-alias rmsvn="find ./ -name \".svn\" | xargs rm -Rf"
+alias rmsvn='find ./ -name ".svn" | xargs rm -Rf'
 
-alias apache="sudo apachectl -k restart"
+alias restart="sudo apachectl -k restart"
+alias start="sudo apachectl start"
+alias stop="sudo apachectl stop"
+alias dbstart="sudo /usr/local/mysql/support-files/mysql.server start"
 
 # programs
 alias edit='open -a "Sublime Text 2"'
-# also/or do this:
-#ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
 
 
