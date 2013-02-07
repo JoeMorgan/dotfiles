@@ -1,3 +1,14 @@
+# Encryption shortcuts
+function encrypt() {
+	openssl cast5-cbc -e -in $1 -out $1.cast5
+}
+
+function decrypt() {
+	openssl cast5-cbc -d -in $1.cast5 -out $1
+	chmod 600 $1
+}
+
+
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
