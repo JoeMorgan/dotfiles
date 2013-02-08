@@ -11,7 +11,7 @@ function decrypt() {
 # All-in-one git commit
 function commit() {
 	if [ $# -ne 1 ]; then
-	    MSG='No message specified'
+	    MSG="No message specified"
 	else
 	    MSG=$1
 	fi
