@@ -10,8 +10,14 @@ function decrypt() {
 
 # All-in-one git commit
 function commit() {
+	if [ $# -ne 1 ]; then
+	    MSG='No message specified'
+	else
+	    MSG=$1
+	fi
+
 	git add .
-	git commit -m $1
+	git commit -m MSG
 	git push origin -u master
 }
 
