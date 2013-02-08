@@ -11,13 +11,12 @@ function decrypt() {
 # All-in-one git commit
 function commit() {
 	if [ $# -ne 1 ]; then
-	    MSG='No message specified'
+		MSG='No message specified'
 	else
-	    MSG=$1
+		MSG=$1
 	fi
 
-	git add .
-	git commit -a -m $MSG
+	git commit -am $MSG
 	git push origin -u master
 }
 
@@ -29,7 +28,7 @@ function md() {
 
 # find shorthand
 function f() {
-    mdfind -name "$1"
+	mdfind -name "$1"
 }
 
 
@@ -48,9 +47,9 @@ function gf() {
   [[ "$remote" ]] || return
   local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
   git log $* --name-status --color | awk "$(cat <<AWK
-    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
-    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
-    /.*/ {print \$0}
+	/^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
+	/^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
+	/.*/ {print \$0}
 AWK
   )" | less -F
 }
