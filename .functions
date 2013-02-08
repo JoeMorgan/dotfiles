@@ -12,8 +12,10 @@ function decrypt() {
 function commit() {
 	if [ $# -ne 1 ]; then
 	    MSG='No message specified'
+	    echo "Hmm"
 	else
 	    MSG=$1
+	    echo "Ahh"
 	fi
 
 	git add .
