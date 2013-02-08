@@ -8,6 +8,12 @@ function decrypt() {
 	chmod 600 $1
 }
 
+# All-in-one git commit
+function commit() {
+	git add .
+	git commit -m $1
+	git push origin -u master
+}
 
 # Create a new directory and enter it
 function md() {
