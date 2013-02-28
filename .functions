@@ -20,10 +20,6 @@ function commit() {
 	git push origin -u master
 }
 
-function display(){
-	osascript /Tools/bin/display.scpt
-}
-
 # Create a new directory and enter it
 function md() {
 	mkdir -p "$@" && cd "$@"
