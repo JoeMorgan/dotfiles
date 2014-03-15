@@ -21,10 +21,20 @@ alias start="sudo apachectl start"
 alias stop="sudo apachectl stop"
 alias dbstart="sudo /usr/local/mysql/support-files/mysql.server start"
 
+alias getip="cd /Tools/bin && ./getip.sh"
+
 # programs
 alias edit='open -a "Sublime Text 2"'
 
+#Atlassian Tools
+alias jira='/Tools/atlassian/JIRA/bin/startup.sh'
+alias crucible='/Tools/atlassian/crucible/bin/start.sh'
+alias sonar='/Tools/atlassian/sonar/sonar-3.7/bin/macosx-universal-64/sonar.sh console'
+alias runsonar='/Tools/atlassian/sonar/sonar-runner-2.3/bin/sonar-runner'
 
+alias mt='ssh sapientboston.com@s31045.gridserver.com'
+alias cac='ssh joe@162.219.6.201'
+alias philips='cd domains/sapientboston.com/html/Philips/ && svn update --password git4life'
 
 #======== Review below
 # List all files colorized in long format
@@ -83,7 +93,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; rm -rfv ~/.Trash"
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do

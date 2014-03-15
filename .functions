@@ -1,3 +1,7 @@
+function maketable(){
+	php artisan migrate:make create_$1 --create --table=$1
+}
+
 # Encryption shortcuts
 function encrypt() {
 	openssl cast5-cbc -e -in $1 -out $1.cast5
@@ -8,12 +12,30 @@ function decrypt() {
 	chmod 600 $1
 }
 
+function killdesk() {
+	defaults write com.apple.finder CreateDesktop -bool false
+	killall Finder
+}
+
+function showdesk() {
+	defaults write com.apple.finder CreateDesktop -bool true
+	killall Finder
+}
+
+function tracegl(){
+	node /Tools/tracegl/tracegl.js /Development
+}
+
+function maketable(){
+	php artisan migrate:make create_$1 --create --table=$1
+}
+
 # All-in-one git commit
 function commit() {
 	if [ $# -ne 1 ]; then
-		MSG='No message specified'
+	    MSG='No message specified'
 	else
-		MSG=$1
+	    MSG=$1
 	fi
 
 	git commit -am $MSG
@@ -28,7 +50,7 @@ function md() {
 
 # find shorthand
 function f() {
-	mdfind -name "$1"
+    mdfind -name "$1"
 }
 
 
@@ -47,9 +69,9 @@ function gf() {
   [[ "$remote" ]] || return
   local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
   git log $* --name-status --color | awk "$(cat <<AWK
-	/^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
-	/^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
-	/.*/ {print \$0}
+    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
+    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
+    /.*/ {print \$0}
 AWK
   )" | less -F
 }

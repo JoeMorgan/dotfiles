@@ -39,10 +39,6 @@ unsetopt correct_all
 
 
 
-# Source NVM
-. /Tools/nvm/nvm.sh
-
-
 # Load ~/.extra, ~/.zsh_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 # Took out zsh_prompt since that functionality exists within the theme file
